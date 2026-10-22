@@ -19,4 +19,5 @@ class book(models.Model):
     student = models.ForeignKey(student,on_delete=models.CASCADE)
     class Meta:
         db_table = "book"
+#amit
     
