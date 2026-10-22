@@ -3,7 +3,7 @@ from django.http import JsonResponse
 
 sensitive_keys = ["api-key","apikey","api_key","password","pass"]
 
-# def get_request_payload(request):
+# def get_request_payload(request):A
 #     content_type = request.META.get("CONTENT_TYPE", "")
 
 #     # JSON
