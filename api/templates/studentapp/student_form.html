@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+</head>
+<body>
+
+    <h2>Add Student</h2>
+
+    <form id="studentForm">
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" id="age" required><br><br>
+
+        <label>City:</label><br>
+        <input type="text" id="city" required><br><br>
+
+        <label>State:</label><br>
+        <input type="text" id="state" required><br><br>
+
+        <label>Country:</label><br>
+        <input type="text" id="country" required><br><br>
+
+        <button type="submit">Save Student</button>
+    </form>
+
+    <p id="message"></p>
+
+<script>
+document.getElementById("studentForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const data = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        city: document.getElementById("city").value,
+        state: document.getElementById("state").value,
+        country: document.getElementById("country").value
+    };
+
+    fetch("http://127.0.0.1:8000/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        document.getElementById("message").innerText = "Student Saved Successfully!";
+        document.getElementById("studentForm").reset();
+    })
+    .catch(error => {
+        document.getElementById("message").innerText = "Error saving student!";
+    });
+});
+</script>
+
+</body>
+</html>
