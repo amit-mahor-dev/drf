@@ -76,6 +76,9 @@ class books(APIView):
         books = book.objects.all()
         serializer = book_ser(books,many = True)
         return Response({"books" : serializer.data}, status=200)
+    
+    
+# comments
 
         
         
