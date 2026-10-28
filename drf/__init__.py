@@ -1,4 +1,2 @@
 # amit
 # lale
-
-# master branch
