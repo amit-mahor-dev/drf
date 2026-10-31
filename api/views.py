@@ -85,6 +85,8 @@ class books(APIView):
 
 def add():
     print(2+5)
+def mul():
+    print(3*5)
 
         
         
