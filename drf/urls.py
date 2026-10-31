@@ -28,5 +28,3 @@ urlpatterns = [
     path("add-student/", student_form_view, name="add_student"),
     path("books", books.as_view())
 ]
-
-"commit"
