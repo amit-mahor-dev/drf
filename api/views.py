@@ -82,6 +82,9 @@ class books(APIView):
 # A
 # B
 
+def mul():
+    print(3*5)
+
         
         
 
